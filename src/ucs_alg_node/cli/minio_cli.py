@@ -16,7 +16,6 @@ class MinioCli:
                 print("Created bucket", bucket)
             else:
                 print("Bucket", bucket, "already exists")
-
         except S3Error as e:
             print(e)
             self.cli = None
