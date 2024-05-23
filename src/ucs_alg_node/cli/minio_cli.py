@@ -9,13 +9,8 @@ class MinioCli:
         self.passwd = passwd
 
         try:
-            self.cli = Minio(host+':'+port, access_key=username, secret_key=passwd, secure=False)
+            self.cli = Minio(host+':'+port, access_key=username, secret_key=passwd)
             found = self.cli.bucket_exists(bucket)
-            if not found:
-                self.cli.make_bucket(bucket)
-                print("Created bucket", bucket)
-            else:
-                print("Bucket", bucket, "already exists")
         except S3Error as e:
             print(e)
             self.cli = None
