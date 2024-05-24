@@ -32,7 +32,6 @@ def test_redis_cli():
     redis_cli.set('test', 'test')
     redis_cli.get('test')
 
-
 def test_mq_cli():
     def on_message(msg):
         print('received: ', msg)
